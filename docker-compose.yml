@@ -1,0 +1,25 @@
+version: '3.9'
+
+services:
+  frontend:
+    image: rahulsinghparihar/shop-frontend
+    container_name: frontend-container
+    ports:
+      - "8080:80"
+    restart: always
+
+  admin:
+    image: rahulsinghparihar/shop-admin
+    container_name: admin-container
+    ports:
+      - "3001:80"
+    restart: always
+
+  backend:
+    image: rahulsinghparihar/shop-backend
+    container_name: backend-container
+    ports:
+      - "5050:5050"
+    env_file:
+      - ./backend/.env
+    restart: always
