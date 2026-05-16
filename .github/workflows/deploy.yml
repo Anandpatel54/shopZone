@@ -1,0 +1,26 @@
+name: Deploy ShopZone
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      # FRONTEND IMAGE
+      - name: Build Frontend Docker Image
+        run: docker build -t shop-frontend ./frontend
+
+      # ADMIN IMAGE
+      - name: Build Admin Docker Image
+        run: docker build -t shop-admin ./admin
+
+      # BACKEND IMAGE
+      - name: Build Backend Docker Image
+        run: docker build -t shop-backend ./backend
