@@ -109,7 +109,7 @@ export default function AddEditProduct() {
             </div>
             {(previews.length > 0 || existingImages.length > 0) && (
               <div className="flex gap-3 mt-3 flex-wrap">
-                {existingImages.map((img,i)=><img key={`ex-${i}`} src={`http://localhost:5050${img}`} className="w-20 h-20 object-cover rounded-lg border"/>)}
+                {existingImages.map((img,i)=><img key={`ex-${i}`} src={`http://3.110.161.19:5050${img}`} className="w-20 h-20 object-cover rounded-lg border"/>)}
                 {previews.map((p,i)=><img key={`pr-${i}`} src={p} className="w-20 h-20 object-cover rounded-lg border"/>)}
               </div>
             )}

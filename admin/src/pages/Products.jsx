@@ -58,7 +58,7 @@ export default function Products() {
             </tr></thead>
             <tbody>{filtered.map(p=>(
               <tr key={p._id} className="border-b border-slate-50 hover:bg-slate-50/50">
-                <td className="px-6 py-4"><div className="w-12 h-12 rounded-lg bg-slate-100 overflow-hidden">{p.images?.[0]?<img src={`http://localhost:5050${p.images[0]}`} alt="" className="w-full h-full object-cover"/>:<Package size={20} className="m-auto mt-3 text-slate-300"/>}</div></td>
+                <td className="px-6 py-4"><div className="w-12 h-12 rounded-lg bg-slate-100 overflow-hidden">{p.images?.[0]?<img src={`http://3.110.161.19:5050${p.images[0]}`} alt="" className="w-full h-full object-cover"/>:<Package size={20} className="m-auto mt-3 text-slate-300"/>}</div></td>
                 <td className="px-6 py-4 text-sm font-medium text-slate-700 max-w-[200px] truncate">{p.title}</td>
                 <td className="px-6 py-4 text-sm font-semibold">₹{p.price}{p.discountPrice>0&&<span className="text-slate-400 text-xs ml-1 line-through">₹{p.discountPrice}</span>}</td>
                 <td className="px-6 py-4 text-sm"><span className={p.stock>0?'text-green-600':'text-red-500'}>{p.stock>0?p.stock:'Out of stock'}</span></td>
