@@ -52,7 +52,7 @@ export default function Orders() {
                 {order.items.map((item,i) => (
                   <div key={i} className="flex items-center gap-3 bg-slate-50 rounded-xl p-3 pr-5">
                     <div className="w-12 h-12 rounded-lg bg-white overflow-hidden border border-slate-100">
-                      {item.image?<img src={`http://localhost:5050${item.image}`} alt="" className="w-full h-full object-cover"/>:<Package size={18} className="m-auto mt-3 text-slate-300"/>}
+                      {item.image?<img src={`http://3.110.161.19:5050${item.image}`} alt="" className="w-full h-full object-cover"/>:<Package size={18} className="m-auto mt-3 text-slate-300"/>}
                     </div>
                     <div>
                       <p className="text-sm font-medium text-slate-700 truncate max-w-[150px]">{item.title}</p>

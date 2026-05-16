@@ -35,13 +35,13 @@ export default function ProductDetails() {
         {/* Image */}
         <div>
           <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 aspect-square">
-            {product.images?.[0] ? <img src={`http://localhost:5050${product.images[0]}`} alt={product.title} className="w-full h-full object-cover"/> : <div className="w-full h-full flex items-center justify-center text-slate-200"><ShoppingCart size={80}/></div>}
+            {product.images?.[0] ? <img src={`http://3.110.161.19:5050${product.images[0]}`} alt={product.title} className="w-full h-full object-cover"/> : <div className="w-full h-full flex items-center justify-center text-slate-200"><ShoppingCart size={80}/></div>}
           </div>
           {product.images?.length > 1 && (
             <div className="flex gap-3 mt-4">
               {product.images.map((img,i) => (
                 <div key={i} className="w-20 h-20 rounded-xl overflow-hidden border-2 border-slate-200 hover:border-orange-400 cursor-pointer">
-                  <img src={`http://localhost:5050${img}`} alt="" className="w-full h-full object-cover"/>
+                  <img src={`http://3.110.161.19:5050${img}`} alt="" className="w-full h-full object-cover"/>
                 </div>
               ))}
             </div>

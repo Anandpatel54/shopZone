@@ -26,7 +26,7 @@ export default function Cart() {
           {items.map(item => (
             <div key={item.product} className="bg-white rounded-2xl p-4 shadow-sm border border-slate-100 flex gap-4">
               <div className="w-24 h-24 rounded-xl bg-slate-50 overflow-hidden flex-shrink-0">
-                {item.image ? <img src={`http://localhost:5050${item.image}`} alt={item.title} className="w-full h-full object-cover"/> : <div className="w-full h-full flex items-center justify-center text-slate-300"><ShoppingBag size={24}/></div>}
+                {item.image ? <img src={`http://3.110.161.19:5050${item.image}`} alt={item.title} className="w-full h-full object-cover"/> : <div className="w-full h-full flex items-center justify-center text-slate-300"><ShoppingBag size={24}/></div>}
               </div>
               <div className="flex-1 min-w-0">
                 <div className="flex justify-between">

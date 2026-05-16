@@ -67,7 +67,7 @@ export default function ProductList() {
             <div key={p._id} className="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 hover:shadow-lg transition-all group">
               <Link to={`/products/${p._id}`}>
                 <div className="relative aspect-square bg-slate-50 overflow-hidden">
-                  {p.images?.[0]?<img src={`http://localhost:5050${p.images[0]}`} alt={p.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"/>:<div className="w-full h-full flex items-center justify-center text-slate-300"><ShoppingCart size={40}/></div>}
+                  {p.images?.[0]?<img src={`http://3.110.161.19:5050${p.images[0]}`} alt={p.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"/>:<div className="w-full h-full flex items-center justify-center text-slate-300"><ShoppingCart size={40}/></div>}
                   {p.stock <= 0 && (
                     <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
                       <span className="bg-red-600 text-white text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">Out of Stock</span>
