@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import { AuthProvider, useAuth } from './context/AuthContext';
@@ -19,12 +20,23 @@ function ProtectedRoute({ children }) {
 }
 
 function AdminLayout() {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
   return (
-    <div className="min-h-screen flex" style={{backgroundColor:'#f1f5f9'}}>
-      <Sidebar />
-      <div className="flex-grow flex flex-col">
-        <Topbar />
-        <main className="flex-grow p-6">
+    <div className="min-h-screen flex relative" style={{backgroundColor:'#f1f5f9'}}>
+      {/* Mobile Sidebar Backdrop */}
+      {isSidebarOpen && (
+        <div 
+          className="fixed inset-0 bg-black/50 z-40 lg:hidden transition-opacity duration-300" 
+          onClick={() => setIsSidebarOpen(false)}
+        />
+      )}
+      
+      <Sidebar isOpen={isSidebarOpen} setIsOpen={setIsSidebarOpen} />
+      
+      <div className="flex-grow flex flex-col min-w-0">
+        <Topbar setIsOpen={setIsSidebarOpen} />
+        <main className="flex-grow p-4 md:p-6">
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/products" element={<Products />} />
